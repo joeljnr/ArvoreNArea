@@ -1,13 +1,22 @@
 
 package arvorenarea;
 
+import static arvorenarea.ArvoreNArea.N;
+
 public class No {
-    private int vInfo[];
-    private No vLig[];
+    private int vInfo[] = new int[N];
+    private No vLig[] = new No[N-1];
     int tl;
     
     public No(int info) {
-    
+        vInfo = new int[N];
+        vLig = new No[N-1];
+        tl = 1;
+        vInfo[0] = info;
+    }
+
+    No() {
+        
     }
 
     public int[] getvInfo() {
@@ -51,10 +60,21 @@ public class No {
     }
 
     public int busca(int info) {
-        return 0;
+        int pos = 0;
+        
+        while(pos < tl && info < vInfo[pos])
+            pos++;
+        
+        return pos;
     }
     
     public void remaneja(int pos) {
     
+    }
+    
+    public void exibeInfo() {
+        for(int i = 0; i < tl; i++)
+            System.out.print(vInfo[i]);
+        System.out.println("");
     }
 }
