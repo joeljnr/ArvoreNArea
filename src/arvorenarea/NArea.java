@@ -58,6 +58,4 @@ public class NArea {
     public void setRaiz(No raiz) {
         this.raiz = raiz;
     }
-    
-    
 }
